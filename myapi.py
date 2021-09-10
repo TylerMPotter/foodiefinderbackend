@@ -2,6 +2,8 @@ from fastapi import FastAPI
 #from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.cors import CORSMiddleware
 import requests
+import random
+
 from urllib.parse import quote
 
 app = FastAPI()
@@ -49,7 +51,7 @@ def get_food(cuisine: str, distance: int, price: int, lat: float, lng: float):
 
     # DEFAULT_TERM = 'dinner'
     # DEFAULT_LOCATION = 'San Francisco, CA'
-    SEARCH_LIMIT = 1
+    SEARCH_LIMIT = 4
 
 
     def request(host, path, api_key, url_params=None):
@@ -101,4 +103,6 @@ def get_food(cuisine: str, distance: int, price: int, lat: float, lng: float):
         }
         return request(API_HOST, SEARCH_PATH, api_key, url_params=url_params)
 
-    return search(API_KEY, cuisine, lat, lng, price, distance)
+    x = search(API_KEY, cuisine, lat, lng, price, distance)
+    print(len(x))
+    return(x)
