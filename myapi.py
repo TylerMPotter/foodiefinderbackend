@@ -7,6 +7,8 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:3000",
+    "https://foodiefinder.vercel.app/",
+    "https://foodiefinder.vercel.app/about"
 ]
 
 app.add_middleware(
