@@ -20,6 +20,6 @@ app.add_middleware(
 )
 
 @app.get("/")
-def get_food(cuisine: str, distance: int, price: int, lat: int, lng: int):
+def get_food(cuisine: str, distance: int, price: int, lat: float, lng: float):
 
     return {distance: price}
