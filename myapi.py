@@ -20,5 +20,6 @@ app.add_middleware(
 )
 
 @app.get("/")
-def index():
-    return {"Hi": "Ren"}
+def get_food(cuisine: str, distance: int, price: int, lat: int, lng: int):
+
+    return {distance: price}
