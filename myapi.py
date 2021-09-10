@@ -104,5 +104,7 @@ def get_food(cuisine: str, distance: int, price: int, lat: float, lng: float):
         return request(API_HOST, SEARCH_PATH, api_key, url_params=url_params)
 
     x = search(API_KEY, cuisine, lat, lng, price, distance)
-    print(len(x["businesses"]))
-    return(x)
+    bus = (len(x["businesses"]))
+    rand = random.randrange(0,bus)
+
+    return(x["businesses"][0])
