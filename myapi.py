@@ -107,4 +107,4 @@ def get_food(cuisine: str, distance: int, price: int, lat: float, lng: float):
     bus = (len(x["businesses"]))
     rand = random.randrange(0,bus)
 
-    return(x["businesses"][0])
+    return(x["businesses"][rand])
