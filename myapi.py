@@ -86,7 +86,7 @@ def get_food(cuisine: str, distance: int, price: str, lat: float, lng: float):
 
 
 
-    def search(api_key, term, latitude, longitude, price, radius):
+    def search(api_key, term, latitude, longitude, price1, radius):
         """Query the Search API by a search term and location.
         Args:
             term (str): The search term passed to the API.
@@ -101,7 +101,7 @@ def get_food(cuisine: str, distance: int, price: str, lat: float, lng: float):
             'longitude': longitude,
             'open_now': True,
             'sort_by' : 'rating',
-            'price' : price,
+            'price' : price1,
             'radius' : radius,
             'limit': SEARCH_LIMIT
         }
