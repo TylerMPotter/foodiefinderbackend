@@ -33,14 +33,18 @@ def get_food(cuisine: str, distance: int, price: str, lat: float, lng: float):
     
     distance = 1609*distance
     
+    price1 = 0
+
     if price == "2":
-        price = "1, 2"
+        price1 = "1, 2"
     elif price == "3":
-        price = "1, 2, 3"
+        price1 = "1, 2, 3"
     elif price == "4":
-        price = "1, 2, 3, 4"
+        price1 = "1, 2, 3, 4"
     else:
-        price = "1"
+        price1 = "1"
+
+    print(price1)
 
 
     API_KEY= "EmNZyvhVKbqUgmrxe_4ifq3lLbTXdIAlel4aYinqHMYP7TXOiu6w2hbfSxghzNgdnZbn0HkyuPgB62KMugT3GK_DghHszLjY_d81yIQgr3FNTRmGceV-nYKcqu0zYXYx"
@@ -103,7 +107,7 @@ def get_food(cuisine: str, distance: int, price: str, lat: float, lng: float):
         }
         return request(API_HOST, SEARCH_PATH, api_key, url_params=url_params)
 
-    x = search(API_KEY, cuisine, lat, lng, price, distance)
+    x = search(API_KEY, cuisine, lat, lng, price1, distance)
     bus = (len(x["businesses"]))
     rand = random.randrange(0,bus)
 
