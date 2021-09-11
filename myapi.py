@@ -34,11 +34,11 @@ def get_food(cuisine: str, distance: int, price: str, lat: float, lng: float):
     distance = 1609*distance
     
     if price == "2":
-        price = "1,2"
+        price = "1, 2"
     elif price == "3":
-        price = "1,2,3"
+        price = "1, 2, 3"
     elif price == "4":
-        price = "1,2,3,4"
+        price = "1, 2, 3, 4"
     else:
         price = "1"
 
