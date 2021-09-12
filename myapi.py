@@ -107,6 +107,8 @@ def get_food(cuisine: str, distance: int, price: str, lat: float, lng: float):
     x = search(API_KEY, cuisine, lat, lng, price1, distance)
     print(x)
     bus = (len(x["businesses"]))
+    if bus < 1:
+        return "nothing is open"
     rand = random.randrange(0,bus)
 
     return(x["businesses"][rand])
