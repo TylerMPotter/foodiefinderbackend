@@ -11,6 +11,7 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:3000",
+    "https://foodiefinder.vercel.app",
     "https://foodiefinder.vercel.app/",
     "https://foodiefinder.vercel.app/about"
 ]
@@ -108,6 +109,7 @@ def get_food(cuisine: str, distance: int, price: str, lat: float, lng: float):
         return request(API_HOST, SEARCH_PATH, api_key, url_params=url_params)
 
     x = search(API_KEY, cuisine, lat, lng, price1, distance)
+    print(x)
     bus = (len(x["businesses"]))
     rand = random.randrange(0,bus)
 
